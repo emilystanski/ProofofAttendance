@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>2016 - Proof of Attendance</title>
+
+<style>
+
+/* GENERAL */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f2f2;
+}
+
+.green-line {
+    height: 5px;
+    background: #4b6f2a;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 10%;
+    background: white;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: black;
+    list-style: none;
+    padding: 10px 0;
+    min-width: 160px;
+}
+
+.dropdown-menu li {
+    padding: 10px 20px;
+}
+
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-menu li:hover {
+    background: #333;
+}
+
+.dropdown.active .dropdown-menu {
+    display: block;
+}
+
+/* ================= MAIN LAYOUT ================= */
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 60px 10%;
+}
+
+/* LEFT IMAGE */
+.main-image {
+    background: linear-gradient(to right, #222, #444);
+    height: 500px;
+}
+
+/* TABLE */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.info-table th,
+.info-table td {
+    border: 1px solid #999;
+    padding: 10px;
+    text-align: center;
+}
+
+.info-table th {
+    background: #e6e6e6;
+}
+
+/* TEXT */
+.description {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* BOTTOM IMAGE LINKS */
+.bottom-links {
+    display: flex;
+    gap: 30px;
+}
+
+.link-box {
+    flex: 1;
+    text-align: center;
+}
+
+.link-box h3 {
+    margin-bottom: 10px;
+}
+
+.link-box a {
+    display: block;
+    height: 150px;
+    background: #ddd;
+    border: 2px solid #999;
+    text-decoration: none;
+}
+
+.link-box a:hover {
+    background: #ccc;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: black;
+    color: white;
+    padding: 60px 10%;
+    margin-top: 60px;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-title {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.footer-column h4 {
+    margin-bottom: 15px;
+}
+
+.footer-column p {
+    margin: 5px 0;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <div class="logo">Proof of Attendance</div>
+
+    <ul class="nav-links">
+
+        <li class="dropdown">
+            <button class="dropbtn">About</button>
+            <ul class="dropdown-menu">
+                <li><a href="index.html#about">Question 1</a></li>
+                <li><a href="index.html#about">Question 2</a></li>
+                <li><a href="index.html#about">Question 3</a></li>
+                <li><a href="index.html#about">Question 4</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <button class="dropbtn">Year</button>
+            <ul class="dropdown-menu">
+                <li><a href="2016.html">2016</a></li>
+                <li><a href="#">2017</a></li>
+                <li><a href="#">2018</a></li>
+                <li><a href="#">2019</a></li>
+                <li><a href="#">2025</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <button class="dropbtn">Type</button>
+            <ul class="dropdown-menu">
+                <li><a href="#">Lanyard</a></li>
+                <li><a href="#">Apparel</a></li>
+                <li><a href="#">OVA Swag</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <button class="dropbtn">Role</button>
+            <ul class="dropdown-menu">
+                <li><a href="#">Athlete</a></li>
+                <li><a href="#">Coach</a></li>
+                <li><a href="#">Referee</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <button class="dropbtn">Location</button>
+            <ul class="dropdown-menu">
+                <li><a href="#">Waterloo</a></li>
+                <li><a href="#">Toronto</a></li>
+                <li><a href="#">Ottawa</a></li>
+            </ul>
+        </li>
+
+    </ul>
+</div>
+
+<div class="green-line"></div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+    <div class="main-image"></div>
+
+    <div>
+
+        <table class="info-table">
+            <tr>
+                <th>Year</th>
+                <th>Location</th>
+                <th>Team</th>
+                <th>Role</th>
+                <th>#</th>
+                <th>Div/Tier</th>
+                <th>Final Rank</th>
+            </tr>
+            <tr>
+                <td>2016</td>
+                <td>Rim Park Waterloo</td>
+                <td>Selects 14U</td>
+                <td>Athlete</td>
+                <td>12</td>
+                <td>D4 T2</td>
+                <td>3rd</td>
+            </tr>
+        </table>
+
+        <div class="description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
+            gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+        </div>
+
+        <div class="bottom-links">
+
+            <div class="link-box">
+                <h3>Lanyards</h3>
+                <a href="lanyards.html"></a>
+            </div>
+
+            <div class="link-box">
+                <h3>Apparel</h3>
+                <a href="apparel.html"></a>
+            </div>
+
+            <div class="link-box">
+                <h3>OVA Swag</h3>
+                <a href="ova.html"></a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-columns">
+
+        <div class="footer-title">
+            Proof of Attendance
+        </div>
+
+        <div class="footer-column">
+            <h3>About</h3>
+            <p>About project</p>
+            <p>Question 1</p>
+            <p>Question 2</p>
+            <p>Question 3</p>
+        </div>
+        <div class="footer-column">
+            <h4>Year</h4>
+            <p>2016</p>
+            <p>2017</p>
+            <p>2018</p>
+            <p>2019</p>
+            <p>2025</p>
+        </div>
+
+        <div class="footer-column">
+            <h4>Role</h4>
+            <p>Athlete</p>
+            <p>Coach</p>
+            <p>Referee</p>
+        </div>
+
+        <div class="footer-column">
+            <h4>Location</h4>
+            <p>Waterloo</p>
+            <p>Toronto</p>
+            <p>Ottawa</p>
+        </div>
+
+    </div>
+</footer>
+
+<!-- DROPDOWN SCRIPT -->
+<script>
+document.querySelectorAll(".dropbtn").forEach(button => {
+  button.addEventListener("click", function(e) {
+    e.stopPropagation();
+
+    document.querySelectorAll(".dropdown").forEach(drop => {
+      if (drop !== this.parentElement) {
+        drop.classList.remove("active");
+      }
+    });
+
+    this.parentElement.classList.toggle("active");
+  });
+});
+
+document.addEventListener("click", function() {
+  document.querySelectorAll(".dropdown").forEach(drop => {
+    drop.classList.remove("active");
+  });
+});
+</script>
+
+</body>
+</html>
