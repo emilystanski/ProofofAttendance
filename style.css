@@ -21,7 +21,7 @@
     font-weight: bold;
     font-size: 18px;
     cursor: pointer;
-    color:rgb(255, 255, 255)
+    color:black
 }
 
 .dropdown-menu {
@@ -45,10 +45,10 @@
 }
 
 .dropdown-menu li:hover {
-    background: #333;
+    background: white;
 }
 
-/* SHOW WHEN ACTIVE */
+
 .dropdown.active .dropdown-menu {
     display: block;
 }
