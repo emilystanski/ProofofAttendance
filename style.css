@@ -131,3 +131,13 @@
     color: white !important;
     opacity: 1 !important;
 }
+.archieve-image{
+    position: relative;
+}
+.slide{
+    width: 50%;
+    display: none;
+}
+.slide.active{
+    display: block;
+}

@@ -133,8 +133,30 @@
         }
     </style>
 </head>
+<script>
+let slides = document.querySelectorAll(".slide");
+let index= 0;
+
+function showSlide() {
+    slides.forEach(slide => slide.classList.remove("active"));
+   
+    slides[index].classList.add("active");
+
+index++;
+if(index>= slides.length){
+    index= 0
+}
+
+}
+
+setInterval(showSlide,2000);
+
+showSlide();
+</script>
+
 
 <body>
+
 
     <!-- Global Header Component -->
     <header>
@@ -205,7 +227,12 @@
         <section class="archive-grid">
 
             <article class="archive-card">
-                <div class="archive-image"></div>
+                <div class="archive-image">
+                <img src="Homepage/HM1.jpg" class="slide">
+                <img src="Homepage/HM2.JPG" class="slide">
+                <img src="Homepage/HM3.JPG" class="slide">
+                </div>
+              
                 <div class="metadata">
                     <span>1</span>
                     <span>2</span>
