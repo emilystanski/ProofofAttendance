@@ -37,7 +37,8 @@
 }
 
 .dropdown-menu li {
-    padding: 10px 20px;
+    display: block;
+    width: 100%;
 }
 
 .dropdown-menu li a {
@@ -45,6 +46,8 @@
     color: white!important;
     text-decoration: none;
     font-weight: normal;
+    width: 100%;
+    padding: 10px 20px;
 }
 
 .dropdown-menu li:hover {
