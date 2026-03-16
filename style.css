@@ -39,6 +39,7 @@
 .dropdown-menu li {
     display: block;
     width: 100%;
+    flex-direction: column;
 }
 
 .dropdown-menu li a {
