@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>2025 - Proof of Attendance</title>
+<title>Landyards - Proof of Attendance</title>
 
 <style>
 
@@ -84,10 +84,10 @@ body {
 /* ================= MAIN LAYOUT ================= */
 
 .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    padding: 60px 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding: 60px 10%;
 }
 
 /* LEFT IMAGE */
@@ -96,6 +96,18 @@ body {
     height: 500px;
 }
 
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start; /* center vertical inside row if desired */
+}
+
+.section .main-image { order: 1; }
+.section .text { order: 2; }
+
+.section:nth-child(even) .main-image { order: 2; }
+.section:nth-child(even) .text { order: 1; }
 /* TABLE */
 .info-table {
     width: 100%;
@@ -149,9 +161,128 @@ body {
 .link-box a:hover {
     background: #ccc;
 }
+.container {
+  overflow: visible;
+}
+
+.section {
+  overflow: visible;
+}
+
+.main-image {
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(to right, #222, #444);
+  background-size: cover;
+  background-position: center;
+}
+
+/* first section image pushed left */
+.section:nth-child(odd) .main-image {
+  margin-left: -40px;
+  transform: translateX(-20px);
+}
+
+/* second/4th/etc image pushed right */
+.section:nth-child(even) .main-image {
+  order: 2;
+  margin-right: -40px;
+  transform: translateX(20px);
+  width: calc(100% + 40px);   /* extend past edge */
+}
+
+.section:nth-child(even) .text {
+  order: 1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding: 60px 12%;
+  overflow: visible;          /* allow overflow for offset images */
+}
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  overflow: visible;          
+}
+
+.main-image {
+  background: linear-gradient(to right, #222, #444);
+  background-size: cover;
+  background-position: center center;
+  height: 500px;
+  min-width: 100%;           
+}
+
+/* odd: */
+.section:nth-child(odd) .main-image {
+  margin-left: -20px;        
+}
+
+
+.section:nth-child(even) .main-image {
+  order: 2;
+  margin-left: auto;      
+  transform: translateX(20px);
+  max-width: calc(100% + 40px);
+}
+
+
+.section:nth-child(even) .text {
+  order: 1;
+}
 
 /* ================= FOOTER ================= */
 
+
+footer {
+  background: #111;
+  color: #eee;
+  padding: 3rem 10%;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-brand h2 {
+  margin: 0 0 0.8rem;
+  font-size: 1.8rem;
+}
+
+.footer-column h3 {
+  margin-bottom: 0.8rem;
+}
+
+.footer-column a,
+.footer-column p {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  margin: 0.25rem 0;
+}
+
+.footer-column a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 1.5rem;
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
 footer {
     background: black;
     color: white;
@@ -175,6 +306,20 @@ footer {
 
 .footer-column p {
     margin: 5px 0;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1;
+}
+
+footer {
+  clear: both;
+  margin-top: 60px;
 }
 
 </style>
@@ -244,10 +389,9 @@ footer {
 <!-- MAIN CONTENT -->
 <div class="container">
 
+    <section class="section">
     <div class="main-image"></div>
-
-    <div>
-
+    <div class="text">
         <table class="info-table">
             <tr>
                 <th>Year</th>
@@ -290,15 +434,14 @@ footer {
             <div class="link-box">
                 <h3>OVA Swag</h3>
                 <a href="ova.html"></a>
+            <div class="bottom-links">...</div>
             </div>
-        </div>
------SECTION 2------
-     <div class="section reverse">
+        </section>
+    </div>
 
+<section class="section">
     <div class="main-image"></div>
-
-    <div>
-
+    <div class="text">
         <table class="info-table">
             <tr>
                 <th>Year</th>
@@ -341,15 +484,17 @@ footer {
             <div class="link-box">
                 <h3>OVA Swag</h3>
                 <a href="ova.html"></a>
-
+            <div class="bottom-links"></div>
+            </div>
+        </section>
+    
 </div>
 
 <!-- FOOTER -->
 <footer>
     <div class="footer-columns">
-
-        <div class="footer-title">
-            Proof of Attendance
+      <div class="footer-band">
+            <h2>Proof of Attendance</h2>
         </div>
 
         <div class="footer-column">

@@ -149,6 +149,28 @@ body {
 .link-box a:hover {
     background: #ccc;
 }
+.section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-top: -40px;
+    padding-top: 60px;
+}
+
+.section-reverse {
+    grid-template-columns: 1fr 1fr;
+    margin-top: -40px;
+    padding-top: 60px;
+}
+
+.section-reverse .main-image {
+    order: 2;
+}
+
+.section-reverse > div:last-child {
+    order: 1;
+}
 
 /* ================= FOOTER ================= */
 
@@ -242,10 +264,9 @@ footer {
 <div class="green-line"></div>
 
 <!-- 2016 -->
-<div class="section">
- <div class="main-image"></div>
- <div>
-
+<div class="container">
+  <div class="main-image"></div>
+  <div>
         <table class="info-table">
             <tr>
                 <th>Year</th>
@@ -291,11 +312,11 @@ footer {
             </div>
         </div>
 -----SECTION 2------
-    <div class="section section reverse">...</div>
- <div class="main-image"></div>
+    
+<div class="section">
+    <div class="main-image"></div>
     <div>
-    <div class="section">
-        <table class="info-table">
+         <table class="info-table">
              
             <tr>
                 <th>Year</th>
