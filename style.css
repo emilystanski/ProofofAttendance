@@ -166,7 +166,4 @@
 .section-reverse> div:last-child{
     order: 1;
 }
-.main-image{
-    height: 500px;
-    background: linear-gradient(to right, #222, #444);
-}
+
