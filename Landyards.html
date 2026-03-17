@@ -11,7 +11,11 @@ body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background: #f2f2f2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
+
 
 .green-line {
     height: 5px;
@@ -84,30 +88,47 @@ body {
 /* ================= MAIN LAYOUT ================= */
 
 .container {
+  flex: 1;
+  padding: 60px 10%;
   display: flex;
   flex-direction: column;
-  gap: 80px;
-  padding: 60px 10%;
-}
-
-/* LEFT IMAGE */
-.main-image {
-    background: linear-gradient(to right, #222, #444);
-    height: 500px;
+  gap: 60px;
 }
 
 .section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: start; /* center vertical inside row if desired */
+  gap: 20px;
+  align-items: start;
+  max-width: 1250px;
+  margin: 100px;
 }
-
-.section .main-image { order: 1; }
-.section .text { order: 2; }
-
-.section:nth-child(even) .main-image { order: 2; }
-.section:nth-child(even) .text { order: 1; }
+.main-image {
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(to right, #222, #444);
+  background-size: cover;
+  background-position: center;
+}
+.section:nth-child(odd) .main-image {
+  transform: translateX(-12px);
+}
+.section:nth-child(even) .main-image {
+  order: 2;
+  transform: translateX(12px);
+}
+.section:nth-child(even) .text {
+  order: 1;
+}
+.text {
+  padding: 10px 10px;
+}
+footer {
+  background: black;
+  color: white;
+  padding: 60px 10%;
+  margin-top: 60px;
+}
 /* TABLE */
 .info-table {
     width: 100%;
@@ -161,90 +182,8 @@ body {
 .link-box a:hover {
     background: #ccc;
 }
-.container {
-  overflow: visible;
-}
-
-.section {
-  overflow: visible;
-}
-
-.main-image {
-  width: 100%;
-  height: 500px;
-  background: linear-gradient(to right, #222, #444);
-  background-size: cover;
-  background-position: center;
-}
-
-/* first section image pushed left */
-.section:nth-child(odd) .main-image {
-  margin-left: -40px;
-  transform: translateX(-20px);
-}
-
-/* second/4th/etc image pushed right */
-.section:nth-child(even) .main-image {
-  order: 2;
-  margin-right: -40px;
-  transform: translateX(20px);
-  width: calc(100% + 40px);   /* extend past edge */
-}
-
-.section:nth-child(even) .text {
-  order: 1;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 80px;
-  padding: 60px 12%;
-  overflow: visible;          /* allow overflow for offset images */
-}
-
-.section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: start;
-  overflow: visible;          
-}
-
-.main-image {
-  background: linear-gradient(to right, #222, #444);
-  background-size: cover;
-  background-position: center center;
-  height: 500px;
-  min-width: 100%;           
-}
-
-/* odd: */
-.section:nth-child(odd) .main-image {
-  margin-left: -20px;        
-}
-
-
-.section:nth-child(even) .main-image {
-  order: 2;
-  margin-left: auto;      
-  transform: translateX(20px);
-  max-width: calc(100% + 40px);
-}
-
-
-.section:nth-child(even) .text {
-  order: 1;
-}
 
 /* ================= FOOTER ================= */
-
-
-footer {
-  background: #111;
-  color: #eee;
-  padding: 3rem 10%;
-}
 
 .footer-columns {
   display: grid;
@@ -283,12 +222,6 @@ footer {
   opacity: 0.8;
   font-size: 0.9rem;
 }
-footer {
-    background: black;
-    color: white;
-    padding: 60px 10%;
-    margin-top: 60px;
-}
 
 .footer-columns {
     display: flex;
@@ -306,20 +239,6 @@ footer {
 
 .footer-column p {
     margin: 5px 0;
-}
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.container {
-  flex: 1;
-}
-
-footer {
-  clear: both;
-  margin-top: 60px;
 }
 
 </style>
@@ -403,7 +322,7 @@ footer {
                 <th>Font</th>
             </tr>
             <tr>
-                <td>2025</td>
+                <td>2016</td>
                 <td>EY Centre, Ottawa</td>
                 <td>Smash Raiders Rockets 15U</td>
                 <td>Assistant Coach</td>
@@ -434,10 +353,10 @@ footer {
             <div class="link-box">
                 <h3>OVA Swag</h3>
                 <a href="ova.html"></a>
-            <div class="bottom-links">...</div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
+</div>
 
 <section class="section">
     <div class="main-image"></div>
@@ -453,7 +372,7 @@ footer {
                 <th>Font</th>
             </tr>
             <tr>
-                <td>2025</td>
+                <td>2017</td>
                 <td>EY Centre, Ottawa</td>
                 <td>Smash Raiders Rockets 15U</td>
                 <td>Assistant Coach</td>
@@ -484,9 +403,9 @@ footer {
             <div class="link-box">
                 <h3>OVA Swag</h3>
                 <a href="ova.html"></a>
-            <div class="bottom-links"></div>
-            </div>
-        </section>
+        </div>
+        </div>
+    </section>
     
 </div>
 
