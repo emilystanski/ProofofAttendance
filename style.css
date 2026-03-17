@@ -156,6 +156,7 @@
     display:grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
+    margin-bottom: 60px;
     align-items: center;
 }
 .section-reverse{
@@ -166,4 +167,8 @@
 }
 .section-reverse> div:last-child{
     order: 1;
+}
+.main-image{
+    height: 500px;
+    background: linear-gradient(to right, #222, #444);
 }
