@@ -145,3 +145,25 @@
 .slide.active{
     display: block;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 60px 10%;
+}
+.section{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+.section-reverse{
+    grid-template-columns: 1fr 1fr;
+}
+.section-reverse .main-image{
+    order: 2;
+}
+.section-reverse> div:last-child{
+    order: 1;
+}
