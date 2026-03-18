@@ -7,15 +7,27 @@
 <style>
 
 /* GENERAL */
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f2f2f2;
-}
+@font-face {
+            font-family: "Sofia Pro Black";
+            src: url("fonts/SofiaPro-Black.woff2") format("woff2"),
+                 url("fonts/SofiaPro-Black.woff") format("woff");
+            font-weight: 900;
+            font-style: bold;
+            font-display: swap;
+        }
+ body {
+            font-family: 'Sofia Pro', sans-serif;
+            src: url('fonts/SofiaPro-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+            background: #92be84; /* sage green */
+            color: var(--text);
+        }
 
 .green-line {
     height: 5px;
-    background: #4b6f2a;
+    background: #000000;
 }
 
 /* ================= HEADER ================= */
@@ -92,8 +104,25 @@ body {
 
 /* LEFT IMAGE */
 .main-image {
+    position: relative;
     background: linear-gradient(to right, #222, #444);
     height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.main-image::before {
+    content: "2016";
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    font-size: 2.4rem;
+    font-weight: 900;
+    padding: 8px 14px;
+    border-radius: 8px;
+    z-index: 10;
 }
 
 /* TABLE */
@@ -105,13 +134,13 @@ body {
 
 .info-table th,
 .info-table td {
-    border: 1px solid #999;
+    border: 1px solid #000000;
     padding: 10px;
     text-align: center;
 }
 
 .info-table th {
-    background: #e6e6e6;
+    background: #ffffff;
 }
 
 /* TEXT */
@@ -119,7 +148,7 @@ body {
     font-size: 22px;
     font-weight: bold;
     line-height: 1.6;
-    color: #333;
+    color: #000000;
     margin-bottom: 40px;
 }
 
@@ -279,17 +308,23 @@ footer {
 
             <div class="link-box">
                 <h3>Lanyards</h3>
-                <a href="lanyards.html"></a>
+                <a href="Landyards.html">
+                    <img src="Homepage/HM1.jpg" alt="Lanyards" style="width:100%; height:170px; object-fit:cover; border-radius:8px;" />
+                </a>
             </div>
 
             <div class="link-box">
                 <h3>Apparel</h3>
-                <a href="apparel.html"></a>
+                <a href="Apparel.html">
+                    <img src="Homepage/HM2.JPG" alt="Apparel" style="width:100%; height:170px; object-fit:cover; border-radius:8px;" />
+                </a>
             </div>
 
             <div class="link-box">
                 <h3>OVA Swag</h3>
-                <a href="ova.html"></a>
+                <a href="OVA_Swag.html">
+                    <img src="Homepage/HM3.JPG" alt="OVA Swag" style="width:100%; height:170px; object-fit:cover; border-radius:8px;" />
+                </a>
             </div>
 
         </div>
@@ -315,12 +350,11 @@ footer {
         </div>
         <div class="footer-column">
             <h4>Year</h4>
-            <p>2016</p>
-            <a href="2016.html"></a>
-            <p>2017</p>
-            <p>2018</p>
-            <p>2019</p>
-            <p>2025</p>
+            <a href="2016.html">2016</a>
+            <a href="2017.html">2017</a>
+            <a href="2018.html">2018</a>
+            <a href="2019.html">2019</a>
+            <a href="2025.html">2025</a>
         </div>
 
         <div class="footer-column">

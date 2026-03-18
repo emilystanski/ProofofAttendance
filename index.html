@@ -6,8 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
+        @font-face {
+            font-family: "Sofia Pro Black";
+            src: url("fonts/SofiaPro-Black.woff2") format("woff2"),
+                 url("fonts/SofiaPro-Black.woff") format("woff");
+            font-weight: 900;
+            font-style: bold;
+            font-display: swap;
+        }
+
         :root {
-            --primary: #2f4f1f;
+            --primary: #000000;
             --border: #e5e5e5;
             --text: #111;
             --background: #f4f4f4;
@@ -20,8 +29,12 @@
         }
 
         body {
-            font-family: Helvetica, Arial, sans-serif;
-            background: var(--background);
+            font-family: 'Sofia Pro', sans-serif;
+            src: url('fonts/SofiaPro-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+            background: #92be84; /* sage green */
             color: var(--text);
         }
 
@@ -29,6 +42,8 @@
             background: white;
             border-bottom: 4px solid var(--primary);
             padding: 1.5rem 2rem;
+            position: relative;
+            z-index: 1000;
         }
 
         .header-container {
@@ -40,7 +55,7 @@
         }
 
         .site-title {
-            font-size: 2rem;
+            font-size: 3rem;
             font-weight: bold;
         }
 
@@ -61,16 +76,67 @@
         }
 
         main {
-            max-width: 1200px;
-            margin: 3rem auto;
+            max-width: 1400px;
+            margin: 2rem auto;
             padding: 0 2rem;
         }
 
         .page-title {
+            font-family: "Sofia Pro Black", Helvetica, Arial, sans-serif;
             font-size: 4rem;
-            font-weight: 800;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            text-align: left;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
             margin-bottom: 3rem;
-            text-align: center;
+            padding: 2.5rem;
+            background: white;
+            border: 1px solid var(--border);
+            min-height: 85vh;
+            width: 100%;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+        }
+
+        .hero-content {
+            flex: 1 1 30%;
+            text-align: left;
+        }
+
+        .hero-slider {
+            flex: 1 1 65%;
+            max-width: 65%;
+            border: 1px solid var(--border);
+            background: #000;
+            position: relative;
+            z-index: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            min-height: 75vh;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            z-index: 1100;
+        }
+
+        .hero-slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .hero-slider img.active {
+            display: block;
         }
 
         .archive-grid {
@@ -118,8 +184,18 @@
         }
 
         @media (max-width: 640px) {
+            .hero {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-slider {
+                max-width: 100%;
+                height: 320px;
+            }
+
             .archive-grid {
-                grid-template-columns: 1fr;
+                display: none;
             }
 
             .page-title {
@@ -131,27 +207,32 @@
                 gap: 1rem;
             }
         }
+        @font-face{
+    font-family: 'Sofia Pro';
+    src: url('fonts/SofiaPro-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+        }
     </style>
 </head>
 <script>
-let slides = document.querySelectorAll(".slide");
-let index= 0;
+document.addEventListener("DOMContentLoaded", function () {
+    const slides = document.querySelectorAll(".hero-slider .slide");
+    let index = 0;
 
-function showSlide() {
-    slides.forEach(slide => slide.classList.remove("active"));
-   
-    slides[index].classList.add("active");
+    function showSlide() {
+        if (!slides.length) return;
 
-index++;
-if(index>= slides.length){
-    index= 0
-}
+        slides.forEach((slide) => slide.classList.remove("active"));
+        slides[index].classList.add("active");
 
-}
+        index = (index + 1) % slides.length;
+    }
 
-setInterval(showSlide,2000);
-
-showSlide();
+    showSlide();
+    setInterval(showSlide, 2000);
+});
 </script>
 
 
@@ -169,23 +250,22 @@ showSlide();
     <li class="dropdown">
       <button class="dropbtn">About</button>
       <ul class="dropdown-menu">
-        <li><a href="#">Question 1</a></li>
-        <li><a href="#">Question 2</a></li>
-        <li><a href="#">Question 3</a></li>
-        <li><a href="#">Question 4</a></li>
+        <li><a href="index.html#about">Question 1</a></li>
+        <li><a href="index.html#about">Question 2</a></li>
+        <li><a href="index.html#about">Question 3</a></li>
       </ul>
     </li>
 
-    <li class="dropdown">
-      <button class="dropbtn">Year</button>
-      <ul class="dropdown-menu">
-        </li><a href="2016.html">2016</a></li>
-        </li><a href="2017.html">2017</a></li>
-       </li><a href="2018.html">2018</a></li>
-       </li><a href="2019.html">2019</a></li>
-       </li><a href="2025.html">2025</a></li>
-      </ul>
-    </li>
+     <li class="dropdown">
+            <button class="dropbtn">Year</button>
+            <ul class="dropdown-menu">
+                <li><a href="2016.html">2016</a></li>
+                <li><a href="2017.html">2017</a></li>
+                <li><a href="2018.html">2018</a></li>
+                <li><a href="2019.html">2019</a></li>
+                <li><a href="2025.html">2025</a></li>
+            </ul>
+        </li>
 
     <li class="dropdown">
       <button class="dropbtn">Type</button>
@@ -221,47 +301,28 @@ showSlide();
     </header>
 
     <main>
-        <h1 class="page-title">Proof of Attendance</h1>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="page-title">Proof of Attendance</h1>
+            </div>
 
-        <!-- Repeatable Archive Card Component -->
-        <section class="archive-grid">
-
-            <article class="archive-card">
-                <div class="archive-image">
-                <img src="Homepage/HM1.jpg" class="slide">
-                <img src="Homepage/HM2.JPG" class="slide">
-                <img src="Homepage/HM3.JPG" class="slide">
-                </div>
-              
-                <div class="metadata">
-                    <span>1</span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>4</span>
-                </div>
-            </article>
-
-            <article class="archive-card">
-                <div class="archive-image"></div>
-                <div class="metadata">
-                    <span>1</span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>4</span>
-                </div>
-            </article>
-
-            <article class="archive-card">
-                <div class="archive-image"></div>
-                <div class="metadata">
-                    <span>1</span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>4</span>
-                </div>
-            </article>
-
+            <div class="hero-slider">
+                <img src="Homepage/HM1.jpg" class="slide" alt="Slide 1">
+                <img src="Homepage/HM2.JPG" class="slide" alt="Slide 2">
+                <img src="Homepage/HM3.JPG" class="slide" alt="Slide 3">
+                <img src="Homepage/HM5.JPG" class="slide" alt="Slide 4">
+                <img src="Homepage/HM6.JPG" class="slide" alt="Slide 5">
+                <img src="Homepage/HM7.JPG" class="slide" alt="Slide 6">
+                <img src="Homepage/HM8.jpeg" class="slide" alt="Slide 7">
+                <img src="Homepage/HM9.JPG" class="slide" alt="Slide 8">
+                <img src="Homepage/HM10.JPG" class="slide" alt="Slide 9">
+                <img src="Homepage/HM11.jpeg" class="slide" alt="Slide 10">
+                <img src="Homepage/HM12.jpeg" class="slide" alt="Slide 11">
+                <img src="Homepage/HM13.jpeg" class="slide" alt="Slide 12">
+                <img src="Homepage/HM14.jpeg" class="slide" alt="Slide 11">
+            </div>
         </section>
+
     </main>
     <section id="about" class="about-section">
 
@@ -306,11 +367,11 @@ showSlide();
 
         <div class="footer-column">
             <h3>Year</h3>
-            <a href="2016.html">2016</a>
-            <a href="2017.html">2017</a>
-            <p>2018</p>
-            <p>2019</p>
-            <p>2025</p>
+            <li><a href="2016.html">2016</a></li>
+            <li><a href="2017.html">2017</a></li>
+            <li><a href="2018.html">2018</a></li>
+            <li><a href="2019.html">2019</a></li>
+            <li><a href="2025.html">2025</a></li>
         </div>
 
         <div class="footer-column">
