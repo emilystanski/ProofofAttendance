@@ -20,7 +20,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 30px 10%;
+    padding: 20px 40px;
     background: white;
 }
 
@@ -81,7 +81,9 @@
 
 .container {
   flex: 1;
-  padding: 30px 10%;
+  padding: 30px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 60px;
@@ -90,11 +92,10 @@
 .section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: -10px;
+  gap: 20px;
   align-items: start;
-  max-width: 1250px;
-  margin: -10px auto;
-  margin-bottom: 50px;
+  margin: 0 auto 50px auto;
+  margin-bottom: 30px;
 }
 .main-image {
   width: 100%;
@@ -104,12 +105,12 @@
   background-position: center;
 }
 @font-face {
-font-family: "Sofia Pro Black";
-src: url("fonts/SofiaPro-Black.woff2") format("woff2"),
- url("fonts/SofiaPro-Black.woff") format("woff");
-font-weight: 900;
-font-style: bold;
-font-display: swap;
+    font-family: "Sofia Pro Black";
+    src: url("fonts/SofiaPro-Black.woff2") format("woff2"),
+    url("fonts/SofiaPro-Black.woff") format("woff");
+    font-weight: 900;
+    font-style: bold;
+    font-display: swap;
  }
  
 html, body {
@@ -118,18 +119,17 @@ html, body {
   min-height: 100%;
 }
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: 'Sofia Pro', sans-serif;
-src: url('fonts/SofiaPro-Regular.ttf') format('truetype');
-font-weight: 400;
-font-style: normal;
-font-display: swap;
-background: #92be84; /* sage green */
-color: var(--text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Sofia Pro', sans-serif;
+    src: url('fonts/SofiaPro-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    background: #92be84; /* sage green */
+    color: var(--text);
 }
-
 .section:nth-child(odd) .main-image {
   transform: translateX(-12px);
 }
@@ -154,20 +154,17 @@ footer {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
-    margin-top: -10px;
+    margin-top: 10px;
 }
-
 .info-table th,
 .info-table td {
     border: 1px solid #000000;
     padding: 10px;
     text-align: center;
 }
-
 .info-table th {
     background: #ffffff;
 }
-
 /* TEXT */
 .description {
     font-size: 22px;
@@ -176,24 +173,21 @@ footer {
     color: #000000;
     margin-bottom: 40px;
 }
-
 h1{
     font-family: "Sofia Pro Black", sans-serif;
-    font-size: 80px;
+    font-size: 90px;
     font-weight: 900;
-    margin-bottom: -10px;
+    margin-top: 20px;
     text-align: center;
-    margin-top: 10px;
     margin-right: 100px;
 }
 h2{
     font-family: "Sofia Pro Black", sans-serif;
-    font-size: 40px;
+    font-size: 50px;
     font-weight: 900;
-    text-align: center;
-    margin-right: 1150px;
-    margin-bottom: -20px;
-    
+    grid-column: span 2;
+    margin-bottom: 0px;
+    margin-top: 0px;
     
 }
 h4{
@@ -204,8 +198,6 @@ h4{
     
     
 }
-
-
 /* BOTTOM IMAGE LINKS */
 .bottom-links {
     display: flex;
@@ -236,11 +228,11 @@ h4{
 /* ================= FOOTER ================= */
 
 .footer-columns {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .footer-brand h2 {
@@ -261,23 +253,14 @@ h4{
   overflow-wrap: anywhere;
   word-break: break-word;
 }
-
-.footer-columns {
-  max-width: 100%;
-  overflow: hidden;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
 .footer-brand,
 .footer-column {
-  padding-left: 250px;
+  padding-left: 20px;
 }
 
 .footer-column a:hover {
   color: #fff;
 }
-
 .footer-bottom {
   text-align: center;
   margin-top: 1.5rem;
@@ -285,14 +268,6 @@ h4{
   padding-top: 1rem;
   opacity: 0.8;
   font-size: 0.9rem;
-}
-
-.footer-columns {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-    box-sizing: border-box;
 }
 
 .footer-column {
@@ -379,35 +354,36 @@ h4{
 <div class="green-line"></div>
 
 <!-- MAIN CONTENT -->
- <div>
-    <h1 class="page-title">Lanyards</h1>
-</div>
-<h2>2016</h2>
-<div class="container">
+<h1 class="page-title">Lanyards</h1>
 
+<div class="container">
+    <!--2016---->
     <section class="section">
+        <h2>2016</h2>
+        
         <div class="main-image"></div>
-    <div class="text">
-        <table class="info-table">
-            <tr>
-                <th>Year</th>
-                <th>Team</th>
-                <th>Role</th>
-                <th>Colour</th>
-                <th>Design Changes?</th>
-                <th>Material</th>
-                <th>Font</th>
-            </tr>
-            <tr>
-                <td>2016</td>
-                <td>EY Centre, Ottawa</td>
-                <td>Smash Raiders Rockets 15U</td>
-                <td>Assistant Coach</td>
-                <td>21</td>
-                <td>D1 T4</td>
-                <td>30/267</td>
-            </tr>
-        </table>
+        
+        <div class="text">
+             <table class="info-table">
+                <tr>
+                    <th>Year</th>
+                    <th>Team</th>
+                    <th>Role</th>
+                    <th>Colour</th>
+                    <th>Design Changes?</th>
+                    <th>Material</th>
+                    <th>Font</th>
+                </tr>
+                <tr>
+                    <td>2016</td>
+                    <td>EY Centre, Ottawa</td>
+                    <td>Smash Raiders Rockets 15U</td>
+                    <td>Assistant Coach</td>
+                    <td>21</td>
+                    <td>D1 T4</td>
+                    <td>30/267</td>
+                </tr>
+            </table>
 
         <div class="description">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -437,36 +413,35 @@ h4{
                     <img src="Homepage/HM3.JPG" alt="OVA Swag" style="width:100%; height:150px; object-fit:cover; border-radius:8px;" />
                 </a>
             </div>
-        </div>
     </section>
-</div>
-
-<div></div>
-
-    <h2>2017</h2>
-<section class="section">
-    <div class="main-image"></div>
-    <div class="text">
-        <table class="info-table">
-            <tr>
-                <th>Year</th>
-                <th>Team</th>
-                <th>Role</th>
-                <th>Colour</th>
-                <th>Design Changes?</th>
-                <th>Material</th>
-                <th>Font</th>
-            </tr>
-            <tr>
-                <td>2017</td>
-                <td>EY Centre, Ottawa</td>
-                <td>Smash Raiders Rockets 15U</td>
-                <td>Assistant Coach</td>
-                <td>21</td>
-                <td>D1 T4</td>
-                <td>30/267</td>
-            </tr>
-        </table>
+    
+    <!--2017---->
+    <section class="section">
+        <h2>2017</h2>
+        
+        <div class="main-image"></div>
+        
+        <div class="text">
+            <table class="info-table">
+                <tr>
+                    <th>Year</th>
+                    <th>Team</th>
+                    <th>Role</th>
+                    <th>Colour</th>
+                    <th>Design Changes?</th>
+                    <th>Material</th>
+                    <th>Font</th>
+                </tr>
+                <tr>
+                    <td>2017</td>
+                    <td>EY Centre, Ottawa</td>
+                    <td>Smash Raiders Rockets 15U</td>
+                    <td>Assistant Coach</td>
+                    <td>21</td>
+                    <td>D1 T4</td>
+                    <td>30/267</td>
+                </tr>
+            </table>
 
         <div class="description">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor

@@ -6,38 +6,19 @@
 
 <style>
 
-/* GENERAL */
-@font-face {
-            font-family: "Sofia Pro Black";
-            src: url("fonts/SofiaPro-Black.woff2") format("woff2"),
-                 url("fonts/SofiaPro-Black.woff") format("woff");
-            font-weight: 900;
-            font-style: bold;
-            font-display: swap;
-        }
- body {
-            font-family: 'Sofia Pro', sans-serif;
-            src: url('fonts/SofiaPro-Regular.ttf') format('truetype');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-            background: #92be84; /* sage green */
-            color: var(--text);
-        }
-
-.green-line {
-    height: 5px;
-    background: #000000;
-}
-
 /* ================= HEADER ================= */
 
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 30px 10%;
+    padding: 30px 8%;
     background: white;
+}
+/* GENERAL */
+.green-line {
+    height: 5px;
+    background: #000000;
 }
 
 .logo {
@@ -95,6 +76,24 @@
 
 /* ================= MAIN LAYOUT ================= */
 
+@font-face {
+    font-family: "Sofia Pro Black";
+    src: url("fonts/SofiaPro-Black.woff2") format("woff2"),
+    url("fonts/SofiaPro-Black.woff") format("woff");
+    font-weight: 900;
+    font-style: bold;
+     font-display: swap;
+}
+
+body {
+    font-family: 'Sofia Pro', sans-serif;
+    src: url('fonts/SofiaPro-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    background: #92be84; /* sage green */
+    color: var(--text);
+}
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -109,20 +108,6 @@
     height: 500px;
     border-radius: 12px;
     overflow: hidden;
-}
-
-.main-image::before {
-    content: "2016";
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    background: rgba(0, 0, 0, 0.6);
-    color: #ffffff;
-    font-size: 2.4rem;
-    font-weight: 900;
-    padding: 8px 14px;
-    border-radius: 8px;
-    z-index: 10;
 }
 
 /* TABLE */
@@ -184,7 +169,7 @@
 footer {
     background: black;
     color: white;
-    padding: 60px 10%;
+    padding: 60px 5%;
     margin-top: 60px;
 }
 
