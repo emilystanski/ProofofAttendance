@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>2017 Lanyard: Proof of Attendance</title>
+
+<style>
+
+.green-line {
+    height: 5px;
+    background: #000000;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: white;
+}
+
+.logo {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: black;
+    list-style: none;
+    padding: 10px 0;
+    min-width: 160px;
+}
+
+.dropdown-menu li {
+    padding: 10px 20px;
+}
+
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-menu li:hover {
+    background: #333;
+}
+
+.dropdown.active .dropdown-menu {
+    display: block;
+}
+.page-title {
+    font-family: "Sofia Pro Black", sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    text-align: left;
+ }
+
+.dropdown-menu {
+    position: absolute;
+    z-index: 1100;
+}
+
+.archive-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.archive-card {
+    background: white;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.archive-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: black;
+}
+
+.metadata {
+    font-size: 0.85rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    opacity: 0.7;
+}
+
+.metadata span {
+    border-right: 1px solid #ccc;
+    padding-right: 0.5rem;
+    }
+
+.metadata span:last-child {
+    border-right: none;
+}
+
+@media (max-width: 1024px){
+    .archive-grid {
+    grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .hero {
+    flex-direction: column;
+    align-items: stretch;
+    }
+}
+
+.archive-grid {
+    display: none;
+}
+
+.page-title {
+    font-size: 2.5rem;
+}
+
+.header-container {
+    flex-direction: column;
+    gap: 1rem;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+  flex: 1;
+  padding: 30px 40px;
+  width: calc(96% - 40px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.main-image {
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(to right, #222, #444);
+  background-size: cover;
+  background-position: center;
+}
+@font-face {
+    font-family: "Sofia Pro Black";
+    src: url("fonts/SofiaPro-Black.woff2") format("woff2"),
+    url("fonts/SofiaPro-Black.woff") format("woff");
+    font-weight: 900;
+    font-style: bold;
+    font-display: swap;
+
+ }
+ @font-face {
+    font-family: "arnsenica demibold";
+    src: url("fonts/arnsenica.ttf") format("truetype");
+    font-weight: 400;
+    font-style: demibold;
+    font-display: swap;
+ }
+ 
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Sofia Pro', sans-serif;
+    src: url('fonts/SofiaPro-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    background-image: url("grid.jpeg");
+    color: var(--text);
+}
+.text-box {
+    background: white;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 50px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-radius: 8px;
+}
+.section:nth-child(odd) .main-image {
+  transform: translateX(-12px);
+}
+.section:nth-child(even) .main-image {
+  order: 2;
+  transform: translateX(12px);
+}
+.section:nth-child(even) .text {
+  order: 1;
+}
+.text {
+  padding: 10px 10px;
+}
+
+/* TABLE */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+.info-table th,
+.info-table td {
+    border: 1px solid #000000;
+    padding: 10px;
+    text-align: center;
+}
+.info-table th {
+    background: #ffffff;
+}
+.description {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.6;
+    color: #000000;
+    margin-bottom: 40px;
+}
+h1{
+    font-family: "Arnsenica Demibold", script;
+    font-size: 150px;
+    font-weight: 900;
+    margin-top: 20px;
+    text-align: center;
+    margin-right: 100px;
+}
+h2{
+    font-family: "arnsenica demibold", script;
+    font-size: 50px;
+    font-weight: 900;
+    grid-column: span 2;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    
+}
+h3{
+    font-family: "Sofia Pro Black", sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+}
+h4{
+    font-family: "Sofia Pro Black", sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    text-align: left;
+}
+
+.bottom-links {
+    display: flex;
+    gap: 30px;
+}
+
+.link-box {
+    flex: 1;
+    text-align: center;
+
+}
+.link-box img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+
+}
+.link-box h3 {
+    margin-bottom: 10px;
+}
+
+.link-box a {
+    display: block;
+    height: 300px;
+    text-decoration: none;
+}
+
+.link-box a:hover {
+    background: #ccc;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    height: 90vh;
+    width: calc(96% - 40px) ;
+    margin: 20px auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.8);
+}
+
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-content h1 {
+    font-size: 100px;
+    margin: 0;
+}
+
+.hero-image {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+#squiggle-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.click {
+    position: absolute;
+    display: block;
+    cursor: pointer;
+    background-color: aqua;
+}
+.footer-board {
+    position: relative;
+    width: 100%;
+}
+
+.footer-img {
+    width: 100%;
+    display: block;
+}
+
+.footer-click {
+    position: absolute;
+    display: block;
+    cursor: pointer;
+}
+.footer-home {
+    left: 3%;
+    bottom: 5%;
+    width: 15%;
+    height: 35%;
+}
+
+.footer-year {
+    left: 23%;
+    bottom: 5%;
+    width: 15%;
+    height: 35%;
+}
+
+.footer-lanyards {
+    left: 45%;
+    bottom: 5%;
+    width: 15%;
+    height: 35%;
+}
+
+.footer-apparel {
+    left: 63%;
+    bottom: 5%;
+    width: 15%;
+    height: 35%;
+}
+
+.footer-merch {
+    left: 81%;
+    bottom: 5%;
+    width: 15%;
+    height: 35%;
+}
+
+
+
+</style>
+</head>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+<script src="sketch.js"></script>
+<script src="squiggle.js"></script>
+</html>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <div class="logo">Proof of Attendance</div>
+
+    <ul class="nav-links">
+            
+        <li class="dropdown">
+            <button class="dropbtn">Home</button>
+            <ul class="dropdown-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#author">Author</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <button class="dropbtn">Year</button>
+            <ul class="dropdown-menu">
+                <li><a href="years.html">Year Guide</a></li>
+                <li><a href="testing2016.html">2016</a></li>
+                <li><a href="2017.html">2017</a></li>
+                <li><a href="2018.html">2018</a></li>
+                <li><a href="2019.html">2019</a></li>
+                <li><a href="2025.html">2025</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <button class="dropbtn">Lanyards</button>
+            <ul class="dropdown-menu">
+                <li><a href="Landyards.html">Lanyards Guide</a></li>
+                <li><a href="LN2016.html">2016</a></li>
+                <li><a href="LN2017.html">2017</a></li>
+                <li><a href="LN2018.html">2018</a></li>
+                <li><a href="LN2019.html">2019</a></li>
+                <li><a href="LN2025.html">2025</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <button class="dropbtn">Apparel</button>
+            <ul class="dropdown-menu">
+                <li><a href="apparel.html">Apparel Guide</a></li>
+                <li><a href="AP2016.html">2016</a></li>
+                <li><a href="AP2017.html">2017</a></li>
+                <li><a href="AP2018.html">2018</a></li>
+                <li><a href="AP2019.html">2019</a></li>
+                <li><a href="AP2025.html">2025</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <button class="dropbtn">Merch</button>
+            <ul class="dropdown-menu">
+               <button class="dropbtn">Merch</button>
+                <li><a href="Merch.html">Merch Guide</a></li>
+                <li><a href="MR2016.html">2016</a></li>
+                <li><a href="MR2017.html">2017</a></li>
+                <li><a href="MR2018.html">2018</a></li>
+                <li><a href="MR2019.html">2019</a></li>
+                <li><a href="MR2025.html">2025</a></li>
+            </ul>
+        </li>
+
+    </ul>
+</div>
+
+<div class="green-line"></div>
+
+<!-- HERO CONTENT -->
+<div class="hero">
+
+    <div class="hero-content">
+        <h1>2017: Lanyard</h1>
+        <div id="squiggle-container"></div>
+    </div>
+    
+    <div class="hero-image">
+        <img src="LN/2017ln.png" alt="Lanyards">
+    </div>
+</div>
+
+
+
+<div class="text-box">
+<!--2017---->
+    <section class="section">
+        
+        <div class="content-layout">
+            <div class="left-side">
+             <table class="info-table">
+                <tr>
+                    <th>Year</th>
+                    <th>Role</th>
+                    <th>Age</th>
+                    <th>Team</th>
+                    <th>Div/Tier</th>
+                    <th>Final Rank</th>
+                    <th>Location</th>
+                </tr>
+                <tr>
+                    <td>2017</td>
+                    <td>Athlete</td>
+                    <td>13</td>
+                    <td>Georgetown Impact 13U</td>
+                    <td>D3 T2</td>
+                    <td>88/124</td>
+                    <td>Rim Park, Waterloo</td>
+                </tr>
+             </table>
+            </div>
+            
+
+        <div class="description">
+            Notes: My second year of playing volleyball was vastly different than my first. For starters, I joined a different club in a different city. Although I was entering my second year of club, my mom decided it was in my best interest to play down. In the OVA, if you are born after September 1st, you can play in the age division below if it better suits your level of play. 
+            Unfortunately, at my first club, I had poor teachers who taught bad habits and outdated techniques. 
+            Although I was playing with girls who were technically a year younger than me and were first-year rep players, many of my teammates were stronger players than I was. However, it was a perfect fit for me as I landed right in the middle in terms of skill. I may have been the oldest, but I maintained being the shortest on the team.
+        </div>
+
+        <div class="description">
+           Although I do not remember most of my first two years of playing since I was young, I remember the work I had to put in that summer after my first year in order to ensure a spot the following season. 
+           Every day, I used to go to the elementary school next to my house and teach myself how to overhand serve after being unsuccessful all season. 
+           Although I went to tryouts with a fever and the flu, I ended up accepting an offer to join Georgetown Impact.
+   
+        <div class="description">
+            At Prov’s, everyone received a keychain for the 10th anniversary of the Ontario Championships, and it remains one of my favourite memorabilia. 
+            However, I think the budget was spent on the keychains since it was the only item we received, but it has remained on my volleyball bags since. 
+        
+        </div>
+
+        <div class="green-line"></div>
+
+        <div class="bottom-links">
+
+            <div class="link-box">
+                <h3>All of 2017 </h3>
+                <a href="2017.html">
+                    <img src="allyears/all2017.png" alt="link-box img">
+                </a>
+            </div>
+
+            <div class="link-box">
+                <h3>2017 Apparel</h3>
+                <a href="AP2017.html">
+                    <img src="AP/AP2017.png" alt="link-box img">
+                </a>
+            </div>
+
+            <div class="link-box">
+                <h3>2017 OVA Merch</h3>
+                <a href="MR2017.html">
+                    <img src="MR/MR2017.png" alt="link-box img">
+            </div>
+    </section>
+</div>
+
+    </section>
+
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-board">
+     
+        <img src="footercopy.png" class="footer-img" alt="Footer">
+        <a href="index.html" class="footer-click footer-home"></a>
+        <a href="years.html" class="footer-click footer-year"></a>
+        <a href="Landyards.html" class="footer-click footer-lanyards"></a>
+        <a href="apparel.html" class="footer-click footer-apparel"></a>
+        <a href="merch.html" class="footer-click footer-merch"></a>
+        
+    </div>
+</footer>
+
+<!-- DROPDOWN SCRIPT -->
+<script>
+document.querySelectorAll(".dropbtn").forEach(button => {
+  button.addEventListener("click", function(e) {
+    e.stopPropagation();
+
+    document.querySelectorAll(".dropdown").forEach(drop => {
+      if (drop !== this.parentElement) {
+        drop.classList.remove("active");
+      }
+    });
+
+    this.parentElement.classList.toggle("active");
+  });
+});
+
+document.addEventListener("click", function() {
+  document.querySelectorAll(".dropdown").forEach(drop => {
+    drop.classList.remove("active");
+  });
+});
+</script>
+
+</body>
+</html>

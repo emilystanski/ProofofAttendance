@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>2017 - Proof of Attendance</title>
+<title>2017: Proof of Attendance</title>
 
 <style>
 
-/* GENERAL */
 
 
 .green-line {
@@ -14,7 +13,6 @@
     background: #000000;
 }
 
-/* ================= HEADER ================= */
 
 .header {
     display: flex;
@@ -172,6 +170,7 @@
   flex-direction: column;
   gap: 60px;
 }
+
 .main-image {
   width: 100%;
   height: 500px;
@@ -191,7 +190,7 @@
  @font-face {
     font-family: "arnsenica demibold";
     src: url("fonts/arnsenica.ttf") format("truetype");
-     font-weight: 400;
+    font-weight: 400;
     font-style: demibold;
     font-display: swap;
  }
@@ -210,8 +209,16 @@ body {
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-    background: #92be84; /* sage green */
+    background-image: url("grid.jpeg");
     color: var(--text);
+}
+.text-box {
+    background: white;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 50px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-radius: 8px;
 }
 .section:nth-child(odd) .main-image {
   transform: translateX(-12px);
@@ -226,12 +233,7 @@ body {
 .text {
   padding: 10px 10px;
 }
-footer {
-  background: black;
-  color: white;
-  padding: 60px 10%;
-  margin-top: auto;
-}
+
 /* TABLE */
 .info-table {
     width: 100%;
@@ -284,8 +286,6 @@ h4{
     font-size: 40px;
     font-weight: 900;
     text-align: left;
-    
-    
 }
 /* BOTTOM IMAGE LINKS */
 .bottom-links {
@@ -298,16 +298,20 @@ h4{
     text-align: center;
 
 }
+.link-box img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
 
+}
 .link-box h3 {
     margin-bottom: 10px;
 }
 
 .link-box a {
     display: block;
-    height: 150px;
-    background: #ddd;
-    border: 2px solid #999;
+    height: 300px;
     text-decoration: none;
 }
 
@@ -317,67 +321,6 @@ h4{
 
 /* ================= FOOTER ================= */
 
-.footer-columns {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.footer-brand h2 {
-  margin: 0 0 0.8rem;
-  font-size: 1.8rem;
-}
-
-.footer-column h3 {
-  margin-bottom: 0.8rem;
-}
-
-.footer-column a,
-.footer-column p {
-  display: block;
-  color: #ccc;
-  text-decoration: none;
-  margin: 0;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-}
-.footer-brand,
-.footer-column {
-  padding-left: 20px;
-}
-
-.footer-column a:hover {
-  color: #fff;
-}
-.footer-bottom {
-  text-align: center;
-  margin-top: 1.5rem;
-  border-top: 1px solid #333;
-  padding-top: 1rem;
-  opacity: 0.8;
-  font-size: 0.9rem;
-}
-
-.footer-column {
-    min-width: 220px;
-    flex: 1 1 220px;
-    box-sizing: border-box;
-}
-
-.footer-title {
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.footer-column h4 {
-    margin-bottom: 15px;
-}
-
-.footer-column p {
-    margin: 5px 0;
-}
 /* HERO (TOP BOX) */
 .hero {
     display: flex;
@@ -422,6 +365,63 @@ h4{
   justify-content: center;
   margin-top: 10px;
 }
+.click {
+    position: absolute;
+    display: block;
+    cursor: pointer;
+    background-color: aqua;
+}
+.footer-board {
+    position: relative;
+    width: 100%;
+}
+
+.footer-img {
+    width: 100%;
+    display: block;
+}
+
+.footer-click {
+    position: absolute;
+    display: block;
+    cursor: pointer;
+}
+.footer-home {
+    left: 3%;
+    bottom: 5%;
+    width: 15%;
+    height: 35%;
+}
+
+.footer-year {
+    left: 23%;
+    bottom: 5%;
+    width: 15%;
+    height: 35%;
+}
+
+.footer-lanyards {
+    left: 45%;
+    bottom: 5%;
+    width: 15%;
+    height: 35%;
+}
+
+.footer-apparel {
+    left: 63%;
+    bottom: 5%;
+    width: 15%;
+    height: 35%;
+}
+
+.footer-merch {
+    left: 81%;
+    bottom: 5%;
+    width: 15%;
+    height: 35%;
+}
+
+
 
 </style>
 </head>
@@ -429,7 +429,7 @@ h4{
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
 <script src="sketch.js"></script>
-<script src="p5.js"></script>
+<script src="squiggle.js"></script>
 </html>
 <body>
 
@@ -444,45 +444,56 @@ h4{
             <ul class="dropdown-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
-                <li><a href="Author.html">Author</a></li>
+                <li><a href="index.html#author">Author</a></li>
             </ul>
         </li>
 
         <li class="dropdown">
             <button class="dropbtn">Year</button>
             <ul class="dropdown-menu">
+                <li><a href="years.html">Year Guide</a></li>
                 <li><a href="testing2016.html">2016</a></li>
                 <li><a href="2017.html">2017</a></li>
                 <li><a href="2018.html">2018</a></li>
                 <li><a href="2019.html">2019</a></li>
+                <li><a href="2020.html">2020</a></li>
                 <li><a href="2025.html">2025</a></li>
             </ul>
         </li>
 
         <li class="dropdown">
-            <button class="dropbtn">Type</button>
+            <button class="dropbtn">Lanyards</button>
             <ul class="dropdown-menu">
-                <li><a href="Landyards.html">Lanyards</a></li>
-                <li><a href="Apparel.html">Apparel</a></li>
-                <li><a href="OVA_Swag.html">OVA Swag</a></li>
+                <li><a href="Landyards.html">Lanyards Guide</a></li>
+                <li><a href="LN2016.html">2016</a></li>
+                <li><a href="LN2017.html">2017</a></li>
+                <li><a href="LN2018.html">2018</a></li>
+                <li><a href="LN2019.html">2019</a></li>
+                <li><a href="LN2025.html">2025</a></li>
             </ul>
         </li>
 
         <li class="dropdown">
-            <button class="dropbtn">Role</button>
+            <button class="dropbtn">Apparel</button>
             <ul class="dropdown-menu">
-                <li><a href="#">Athlete</a></li>
-                <li><a href="#">Coach</a></li>
-                <li><a href="#">Referee</a></li>
+                <li><a href="apparel.html">Apparel Guide</a></li>
+                <li><a href="AP2016.html">2016</a></li>
+                <li><a href="AP2017.html">2017</a></li>
+                <li><a href="AP2018.html">2018</a></li>
+                <li><a href="AP2019.html">2019</a></li>
+                <li><a href="AP2025.html">2025</a></li>
             </ul>
         </li>
 
         <li class="dropdown">
-            <button class="dropbtn">Location</button>
+            <button class="dropbtn">Merch</button>
             <ul class="dropdown-menu">
-                <li><a href="#">Waterloo</a></li>
-                <li><a href="#">Toronto</a></li>
-                <li><a href="#">Ottawa</a></li>
+                <li><a href="Merch.html">Merch Guide</a></li>
+                <li><a href="MR2016.html">2016</a></li>
+                <li><a href="MR2017.html">2017</a></li>
+                <li><a href="MR2018.html">2018</a></li>
+                <li><a href="MR2019.html">2019</a></li>
+                <li><a href="MR2025.html">2025</a></li>
             </ul>
         </li>
 
@@ -500,12 +511,13 @@ h4{
     </div>
     
     <div class="hero-image">
-        <img src="all2017.jpg" alt="Lanyards">
+        <img src="allyears/all2017.png" alt="Lanyards">
     </div>
 </div>
 
-<div class="container">
-<!--2017---->
+
+<!-- ABOUT CONTENT -->
+<div class="text-box">
     <section class="section">
         
         <div class="content-layout">
@@ -534,33 +546,46 @@ h4{
             
 
         <div class="description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
-            gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+            Notes: My second year of playing volleyball was vastly different than my first. For starters, I joined a different club in a different city. Although I was entering my second year of club, my mom decided it was in my best interest to play down. In the OVA, if you are born after September 1st, you can play in the age division below if it better suits your level of play. 
+            Unfortunately, at my first club, I had poor teachers who taught bad habits and outdated techniques. 
+            Although I was playing with girls who were technically a year younger than me and were first-year rep players, many of my teammates were stronger players than I was. However, it was a perfect fit for me as I landed right in the middle in terms of skill. I may have been the oldest, but I maintained being the shortest on the team.
         </div>
+
+        <div class="description">
+           Although I do not remember most of my first two years of playing since I was young, I remember the work I had to put in that summer after my first year in order to ensure a spot the following season. 
+           Every day, I used to go to the elementary school next to my house and teach myself how to overhand serve after being unsuccessful all season. 
+           Although I went to tryouts with a fever and the flu, I ended up accepting an offer to join Georgetown Impact.
+        </div>
+   
+        <div class="description">
+            At Prov’s, everyone received a keychain for the 10th anniversary of the Ontario Championships, and it remains one of my favourite memorabilia. 
+            However, I think the budget was spent on the keychains since it was the only item we received, but it has remained on my volleyball bags since. 
+        
+        </div>
+
+        <!-- BOTTOM LINKS -->
         <div class="green-line"></div>
 
         <div class="bottom-links">
 
             <div class="link-box">
                 <h3>2017 Lanyard</h3>
-                <a href="Landyards.html#2017">
-                    <img src="new2017lanyard.jpg" alt="Lanyards" style="width:100%; height:150px; object-fit:cover; border-radius:8px;" />
+                <a href="LN2017.html">
+                    <img src="LN/2017ln2.png" alt="link-box img">
                 </a>
             </div>
 
             <div class="link-box">
                 <h3>2017 Apparel</h3>
-                <a href="Apparel.html">
-                    <img src="sweater2017.jpg" alt="Apparel" style="width:100%; height:150px; object-fit:cover; border-radius:8px;" />
+                <a href="AP2017.html">
+                    <img src="AP/AP2017.png" alt="link-box img">
                 </a>
             </div>
 
             <div class="link-box">
                 <h3>2017 OVA Merch</h3>
-                <a href="OVA_Swag.html">
-                    <img src="Homepage/HM3.JPG" alt="OVA Swag" style="width:100%; height:150px; object-fit:cover; border-radius:8px;" />
-                </a>
+                <a href="MR2017.html">
+                    <img src="MR/MR2017.png" alt="link-box img">
             </div>
     </section>
 </div>
@@ -570,39 +595,15 @@ h4{
 
 <!-- FOOTER -->
 <footer>
-    <div class="footer-columns">
-      <div class="footer-band">
-            <h4>Proof of Attendance</h4>
-        </div>
-
-        <div class="footer-column">
-            <h4>Home</h4>
-            <p>About</p>
-            <p>Author</p>
-        </div>
-        <div class="footer-column">
-            <h4>Year</h4>
-            <a href="2016.html">2016</a>
-            <a href="2017.html">2017</a>
-            <a href="2018.html">2018</a>
-            <a href="2019.html">2019</a>
-            <a href="2025.html">2025</a>
-        </div>
-
-        <div class="footer-column">
-            <h4>Role</h4>
-            <p>Athlete</p>
-            <p>Coach</p>
-            <p>Referee</p>
-        </div>
-
-        <div class="footer-column">
-            <h4>Location</h4>
-            <p>Waterloo</p>
-            <p>Toronto</p>
-            <p>Ottawa</p>
-        </div>
-
+    <div class="footer-board">
+     
+        <img src="footercopy.png" class="footer-img" alt="Footer">
+        <a href="index.html" class="footer-click footer-home"></a>
+        <a href="years.html" class="footer-click footer-year"></a>
+        <a href="Landyards.html" class="footer-click footer-lanyards"></a>
+        <a href="apparel.html" class="footer-click footer-apparel"></a>
+        <a href="merch.html" class="footer-click footer-merch"></a>
+        
     </div>
 </footer>
 

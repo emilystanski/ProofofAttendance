@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Apparel: Proof of Attendance</title>
+
+<style>
+
+.green-line {
+    height: 5px;
+    background: #000000;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: white;
+}
+
+.logo {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+
+}
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: black;
+    list-style: none;
+    padding: 10px 0;
+    min-width: 160px;
+}
+
+.dropdown-menu li {
+    padding: 10px 20px;
+}
+
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-menu li:hover {
+    background: #333;
+}
+
+.dropdown.active .dropdown-menu {
+    display: block;
+}
+.page-title {
+    font-family: "Sofia Pro Black", sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    text-align: left;
+ }
+
+.dropdown-menu {
+    position: absolute;
+    z-index: 1100;
+}
+
+@font-face {
+    font-family: "Sofia Pro Black";
+    src: url("fonts/SofiaPro-Black.woff2") format("woff2"),
+    url("fonts/SofiaPro-Black.woff") format("woff");
+    font-weight: 900;
+    font-style: bold;
+    font-display: swap;
+
+ }
+ @font-face {
+    font-family: "arnsenica demibold";
+    src: url("fonts/arnsenica.ttf") format("truetype");
+    font-weight: 400;
+    font-style: demibold;
+    font-display: swap;
+ }
+ 
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Sofia Pro', sans-serif;
+    src: url('fonts/SofiaPro-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    background-image: url("grid.jpeg");
+    color: var(--text);
+}
+.footer-board {
+    position: relative;
+    width: 100%;
+}
+
+.footer-img {
+    width: 100%;
+    display: block;
+}
+
+.footer-click {
+    position: absolute;
+    display: block;
+    cursor: pointer;
+}
+.footer-home {
+    left: 3%;
+    bottom: 5%;
+    width: 15%;
+    height: 35%;
+}
+
+.footer-year {
+    left: 23%;
+    bottom: 5%;
+    width: 15%;
+    height: 35%;
+}
+
+.footer-lanyards {
+    left: 45%;
+    bottom: 5%;
+    width: 15%;
+    height: 35%;
+}
+
+.footer-apparel {
+    left: 63%;
+    bottom: 5%;
+    width: 15%;
+    height: 35%;
+}
+
+.footer-merch {
+    left: 81%;
+    bottom: 5%;
+    width: 15%;
+    height: 35%;
+}
+
+.board {
+    position: relative;
+    max-width: 2500px;
+    margin: 0px auto;
+}
+
+.board-img {
+    width: 100%;
+    display: block;
+}
+.lanyard-title {
+    display: block;
+    max-width: 800px;   
+    width: 100%;
+    margin: 10px auto 0 auto;
+}
+.click {
+    position: absolute;
+    display: block;
+    cursor: pointer;
+}
+.y2016 { 
+    top: 11%; 
+    left: 31%; 
+    width: 8%; 
+    height: 30%; 
+}
+.y2017 { 
+    top: 13%; 
+    left: 44%; 
+    width: 8%; 
+    height: 30%; 
+}
+.y2018 { 
+    top: 13%; 
+    left: 58%; 
+    width: 8%; 
+    height: 30%; 
+}
+
+.y2019 { 
+    top: 50%; 
+    left: 29%; 
+    width: 8%; 
+    height: 30%; 
+}
+.y2020 { 
+    top: 50%; 
+    left: 44%; 
+    width: 8%; 
+    height: 30%; 
+}
+.y2025 { 
+    top: 51%; 
+    left: 61%; 
+    width: 8%; 
+    height: 30%; 
+}
+</style>
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+<script src="sketch.js"></script>
+<script src="p5.js"></script>
+</html>
+<body>
+
+
+<div class="header">
+    <div class="logo">Proof of Attendance</div>
+
+    <ul class="nav-links">
+
+        <li class="dropdown">
+            <button class="dropbtn">Home</button>
+            <ul class="dropdown-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#author">Author</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <button class="dropbtn">Year</button>
+            <ul class="dropdown-menu">
+                <li><a href="years.html">Year Guide</a></li>
+                <li><a href="testing2016.html">2016</a></li>
+                <li><a href="2017.html">2017</a></li>
+                <li><a href="2018.html">2018</a></li>
+                <li><a href="2019.html">2019</a></li>
+                <li><a href="2025.html">2025</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <button class="dropbtn">Lanyards</button>
+            <ul class="dropdown-menu">
+                <li><a href="Landyards.html">Lanyards Guide</a></li>
+                <li><a href="LN2016.html">2016</a></li>
+                <li><a href="LN2017.html">2017</a></li>
+                <li><a href="LN2018.html">2018</a></li>
+                <li><a href="LN2019.html">2019</a></li>
+                <li><a href="LN2025.html">2025</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <button class="dropbtn">Apparel</button>
+             <ul class="dropdown-menu">
+                <li><a href="apparel.html">Apparel Guide</a></li>
+                <li><a href="AP2016.html">2016</a></li>
+                <li><a href="AP2017.html">2017</a></li>
+                <li><a href="AP2018.html">2018</a></li>
+                <li><a href="AP2019.html">2019</a></li>
+                <li><a href="AP2025.html">2025</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <button class="dropbtn">Merch</button>
+            <ul class="dropdown-menu">
+                <li><a href="Merch.html">Merch Guide</a></li>
+                <li><a href="MR2016.html">2016</a></li>
+                <li><a href="MR2017.html">2017</a></li>
+                <li><a href="MR2018.html">2018</a></li>
+                <li><a href="MR2019.html">2019</a></li>
+                <li><a href="MR2025.html">2025</a></li>
+            </ul>
+        </li>
+
+    </ul>
+</div>
+
+<div class="green-line"></div>
+
+<section class="lanyard-board-section">
+  
+    <img src="MR/MRtitle.png" class="lanyard-title">
+
+    <div class="board">
+        <img src="MRbrowse.png" alt="Years Board" class="board-img">
+
+        <a href="MR2016.html" class="click y2016"></a>
+        <a href="MR2017.html" class="click y2017"></a>
+        <a href="MR2018.html" class="click y2018"></a>
+        <a href="MR2019.html" class="click y2019"></a>
+        <a href="MR2025.html" class="click y2025"></a>
+
+    </div>
+</section>
+
+
+<footer>
+
+    <div class="footer-board">
+     
+        <img src="footercopy.png" class="footer-img" alt="Footer">
+        <a href="index.html" class="footer-click footer-home"></a>
+        <a href="years.html" class="footer-click footer-year"></a>
+        <a href="Landyards.html" class="footer-click footer-lanyards"></a>
+        <a href="apparel.html" class="footer-click footer-apparel"></a>
+        <a href="merch.html" class="footer-click footer-merch"></a>
+        
+    </div>
+
+</footer>
+
+<!-- DROPDOWN SCRIPT -->
+<script>
+document.querySelectorAll(".dropbtn").forEach(button => {
+  button.addEventListener("click", function(e) {
+    e.stopPropagation();
+
+    document.querySelectorAll(".dropdown").forEach(drop => {
+      if (drop !== this.parentElement) {
+        drop.classList.remove("active");
+      }
+    });
+
+    this.parentElement.classList.toggle("active");
+  });
+});
+
+document.addEventListener("click", function() {
+  document.querySelectorAll(".dropdown").forEach(drop => {
+    drop.classList.remove("active");
+  });
+});
+</script>
+
+</body>
+</html>

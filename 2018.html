@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>2018 - Proof of Attendance</title>
+<title>2018: Proof of Attendance</title>
 
 <style>
 
-/* GENERAL */
 
 
 .green-line {
@@ -14,7 +13,6 @@
     background: #000000;
 }
 
-/* ================= HEADER ================= */
 
 .header {
     display: flex;
@@ -161,7 +159,6 @@
     padding: 0;
 }
 
-/* ================= MAIN LAYOUT ================= */
 
 .container {
   flex: 1;
@@ -172,6 +169,7 @@
   flex-direction: column;
   gap: 60px;
 }
+
 .main-image {
   width: 100%;
   height: 500px;
@@ -191,7 +189,7 @@
  @font-face {
     font-family: "arnsenica demibold";
     src: url("fonts/arnsenica.ttf") format("truetype");
-     font-weight: 400;
+    font-weight: 400;
     font-style: demibold;
     font-display: swap;
  }
@@ -210,8 +208,16 @@ body {
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-    background: #92be84; /* sage green */
+    background-image: url("grid.jpeg");
     color: var(--text);
+}
+.text-box {
+    background: white;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 50px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-radius: 8px;
 }
 .section:nth-child(odd) .main-image {
   transform: translateX(-12px);
@@ -226,13 +232,8 @@ body {
 .text {
   padding: 10px 10px;
 }
-footer {
-  background: black;
-  color: white;
-  padding: 60px 10%;
-  margin-top: auto;
-}
-/* TABLE */
+
+
 .info-table {
     width: 100%;
     border-collapse: collapse;
@@ -248,7 +249,7 @@ footer {
 .info-table th {
     background: #ffffff;
 }
-/* TEXT */
+
 .description {
     font-size: 22px;
     font-weight: bold;
@@ -284,8 +285,6 @@ h4{
     font-size: 40px;
     font-weight: 900;
     text-align: left;
-    
-    
 }
 /* BOTTOM IMAGE LINKS */
 .bottom-links {
@@ -298,16 +297,20 @@ h4{
     text-align: center;
 
 }
+.link-box img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
 
+}
 .link-box h3 {
     margin-bottom: 10px;
 }
 
 .link-box a {
     display: block;
-    height: 150px;
-    background: #ddd;
-    border: 2px solid #999;
+    height: 300px;
     text-decoration: none;
 }
 
@@ -315,70 +318,7 @@ h4{
     background: #ccc;
 }
 
-/* ================= FOOTER ================= */
 
-.footer-columns {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.footer-brand h2 {
-  margin: 0 0 0.8rem;
-  font-size: 1.8rem;
-}
-
-.footer-column h3 {
-  margin-bottom: 0.8rem;
-}
-
-.footer-column a,
-.footer-column p {
-  display: block;
-  color: #ccc;
-  text-decoration: none;
-  margin: 0;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-}
-.footer-brand,
-.footer-column {
-  padding-left: 20px;
-}
-
-.footer-column a:hover {
-  color: #fff;
-}
-.footer-bottom {
-  text-align: center;
-  margin-top: 1.5rem;
-  border-top: 1px solid #333;
-  padding-top: 1rem;
-  opacity: 0.8;
-  font-size: 0.9rem;
-}
-
-.footer-column {
-    min-width: 220px;
-    flex: 1 1 220px;
-    box-sizing: border-box;
-}
-
-.footer-title {
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.footer-column h4 {
-    margin-bottom: 15px;
-}
-
-.footer-column p {
-    margin: 5px 0;
-}
-/* HERO (TOP BOX) */
 .hero {
     display: flex;
     align-items: center;
@@ -422,6 +362,63 @@ h4{
   justify-content: center;
   margin-top: 10px;
 }
+.click {
+    position: absolute;
+    display: block;
+    cursor: pointer;
+    background-color: aqua;
+}
+.footer-board {
+    position: relative;
+    width: 100%;
+}
+
+.footer-img {
+    width: 100%;
+    display: block;
+}
+
+.footer-click {
+    position: absolute;
+    display: block;
+    cursor: pointer;
+}
+.footer-home {
+    left: 3%;
+    bottom: 5%;
+    width: 15%;
+    height: 35%;
+}
+
+.footer-year {
+    left: 23%;
+    bottom: 5%;
+    width: 15%;
+    height: 35%;
+}
+
+.footer-lanyards {
+    left: 45%;
+    bottom: 5%;
+    width: 15%;
+    height: 35%;
+}
+
+.footer-apparel {
+    left: 63%;
+    bottom: 5%;
+    width: 15%;
+    height: 35%;
+}
+
+.footer-merch {
+    left: 81%;
+    bottom: 5%;
+    width: 15%;
+    height: 35%;
+}
+
+
 
 </style>
 </head>
@@ -429,7 +426,7 @@ h4{
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
 <script src="sketch.js"></script>
-<script src="p5.js"></script>
+<script src="squiggle.js"></script>
 </html>
 <body>
 
@@ -444,45 +441,56 @@ h4{
             <ul class="dropdown-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
-                <li><a href="Author.html">Author</a></li>
+                <li><a href="index.html#author">Author</a></li>
             </ul>
         </li>
 
         <li class="dropdown">
             <button class="dropbtn">Year</button>
             <ul class="dropdown-menu">
+                <li><a href="years.html">Year Guide</a></li>
                 <li><a href="testing2016.html">2016</a></li>
                 <li><a href="2017.html">2017</a></li>
                 <li><a href="2018.html">2018</a></li>
                 <li><a href="2019.html">2019</a></li>
+                <li><a href="2020.html">2020</a></li>
                 <li><a href="2025.html">2025</a></li>
             </ul>
         </li>
 
         <li class="dropdown">
-            <button class="dropbtn">Type</button>
+            <button class="dropbtn">Lanyards</button>
             <ul class="dropdown-menu">
-                <li><a href="Landyards.html">Lanyards</a></li>
-                <li><a href="Apparel.html">Apparel</a></li>
-                <li><a href="OVA_Swag.html">OVA Swag</a></li>
+                <li><a href="Landyards.html">Lanyards Guide</a></li>
+                <li><a href="LN2016.html">2016</a></li>
+                <li><a href="LN2017.html">2017</a></li>
+                <li><a href="LN2018.html">2018</a></li>
+                <li><a href="LN2019.html">2019</a></li>
+                <li><a href="LN2025.html">2025</a></li>
             </ul>
         </li>
 
         <li class="dropdown">
-            <button class="dropbtn">Role</button>
+            <button class="dropbtn">Apparel</button>
             <ul class="dropdown-menu">
-                <li><a href="#">Athlete</a></li>
-                <li><a href="#">Coach</a></li>
-                <li><a href="#">Referee</a></li>
+                <li><a href="apparel.html">Apparel Guide</a></li>
+                <li><a href="AP2016.html">2016</a></li>
+                <li><a href="AP2017.html">2017</a></li>
+                <li><a href="AP2018.html">2018</a></li>
+                <li><a href="AP2019.html">2019</a></li>
+                <li><a href="AP2025.html">2025</a></li>
             </ul>
         </li>
 
         <li class="dropdown">
-            <button class="dropbtn">Location</button>
+            <button class="dropbtn">Merch</button>
             <ul class="dropdown-menu">
-                <li><a href="#">Waterloo</a></li>
-                <li><a href="#">Toronto</a></li>
-                <li><a href="#">Ottawa</a></li>
+                <li><a href="Merch.html">Merch Guide</a></li>
+                <li><a href="MR2016.html">2016</a></li>
+                <li><a href="MR2017.html">2017</a></li>
+                <li><a href="MR2018.html">2018</a></li>
+                <li><a href="MR2019.html">2019</a></li>
+                <li><a href="MR2025.html">2025</a></li>
             </ul>
         </li>
 
@@ -500,12 +508,13 @@ h4{
     </div>
     
     <div class="hero-image">
-        <img src="all2018.jpg" alt="Lanyards">
+        <img src="allyears/all2018.png" alt="Lanyards">
     </div>
 </div>
 
-<div class="container">
-<!--2018---->
+
+<!-- ABOUT CONTENT -->
+<div class="text-box">
     <section class="section">
         
         <div class="content-layout">
@@ -524,8 +533,8 @@ h4{
                     <td>2018</td>
                     <td>Athlete</td>
                     <td>14</td>
-                    <td>Georgetown Impact 14U</td>
-                    <td>D1 T3</td>
+                    <td>Georgetown Impact 14U Black</td>
+                    <td>D1 T4</td>
                     <td>23/111</td>
                     <td>Rim Park, Waterloo</td>
                 </tr>
@@ -534,33 +543,53 @@ h4{
             
 
         <div class="description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
-            gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+            Notes: From my first season playing down in 13U, I continued to play down for the rest of my volleyball career. 
+            At the time, the number of teams was less than half of the number from when I played.
+            This year specifically, I remember Impact had created a second 14U team called Impact Red, which came as a surprise, as it was rare for clubs to have more than one team for an age group. 
+            Regardless, I had remained on the same team, which was considered the “A Team.” However, compared to my 13U season, I remember a lot more from this time.
+
         </div>
+
+        <div class="description">
+            During this time, I had also tried out for other teams. I tried out for the Oakville Thunder and received an offer within 15 minutes of the first tryout. 
+            I had been called out during the tryout for being the only athlete who was being loud and communicating, stating that I immediately caught all the coaches' attention.
+            I had also tried out for Pakman that year and made it all the way to the final cut. Since I had lived in Brampton, Pakman sessions were the closest and best volleyball education I could have received.
+            Since I had been doing extra practices with Pakman during both the on and off seasons, I had become recognizable to certain coaches. I also had a slight advantage since my cousin, who was the same age, was one of the star players on her Pakman team. 
+            As I mentioned, it was very rare for clubs to have a second team, and Pakman was definitely no exception. At the time, they had a reputation for prioritizing their boys' teams as they all had two teams for each age group. 
+            The coach, who shall remain nameless, expressed that the final decision did not come down to skill, but height. They had instead taken a girl with minimal playing experience, but she was 5’9 at 14, and I could not compete at 5’4. It was disappointing to be denied because of something I could not control, but reassuring to know it wasn’t because of my skills, which was a bitter-sweet pill to swallow. During a serving drill at the impact tryout, a girl who played on Pakman that past season had attended both Impacts and Parkman’s tryouts, and expressed how surprised she was that I did not make the team.
+            Not a minute later, my coach approached me inquiring if I had tried out for any other teams, as they were eager to have me back on the team, and assured him that I had nothing to worry about.
+        </div>
+   
+        <div class="description">
+            I wish I had good things to say about this season or this team in general. 
+            I was bullied by the majority of the girls on my team and was treated like an outcast amongst my one friend, who I am thankful remains my friend to this day. It was easier to get through it together, and we both eventually found our voices. At provincials, it was my first year playing the morning wave as it was my first time in D1, and typically, the top two divisions played in the morning. 
+            I remember stepping off the court after we had finished our last pool play match of the morning, and I was walking behind my teammates. My setter was talking to one of my fellow leftsides and told her something along the lines of, “I don’t like Emily, and that's why I’m going to continue not setting her.” I cleared my throat so they knew I heard the conversation. My setter walked off, embarrassed, as my teammate stood beside me and laughed that I had heard the conversation.
+            This situation had taught me that no matter the age, words and labels can shape you forever, and years going forward, I had convinced myself that I was not a good volleyball player. Truthfully, I had only realized this wasn’t true in my second year of coaching. Even though we had come 23rd out of 111 teams, this whole provincials was overshadowed by that one comment. However, I think karma had my back after that situation, as one didn’t make either team the following year for poor behaviour, and the other had to be benched due to injury. What goes around, definitely comes around.
+        </div>
+
+        <!-- BOTTOM LINKS -->
         <div class="green-line"></div>
 
         <div class="bottom-links">
 
             <div class="link-box">
                 <h3>2018 Lanyard</h3>
-                <a href="Landyards.html#2018">
-                    <img src="2017lanyard.jpg" alt="Lanyards" style="width:100%; height:150px; object-fit:cover; border-radius:8px;" />
+                <a href="LN2018.html">
+                    <img src="LN/2018ln2.png" alt="link-box img">
                 </a>
             </div>
 
             <div class="link-box">
                 <h3>2018 Apparel</h3>
-                <a href="Apparel.html">
-                    <img src="sweater2018.jpg" alt="Apparel" style="width:100%; height:150px; object-fit:cover; border-radius:8px;" />
+                <a href="AP2018.html">
+                    <img src="AP/AP2018.png" alt="link-box img">
                 </a>
             </div>
 
             <div class="link-box">
                 <h3>2018 OVA Merch</h3>
-                <a href="OVA_Swag.html">
-                    <img src="Homepage/HM3.JPG" alt="OVA Swag" style="width:100%; height:150px; object-fit:cover; border-radius:8px;" />
-                </a>
+                <a href="MR2018.html">
+                    <img src="MR/MR2018.png" alt="link-box img">
             </div>
     </section>
 </div>
@@ -570,39 +599,15 @@ h4{
 
 <!-- FOOTER -->
 <footer>
-    <div class="footer-columns">
-      <div class="footer-band">
-            <h4>Proof of Attendance</h4>
-        </div>
-
-        <div class="footer-column">
-            <h4>Home</h4>
-            <p>About</p>
-            <p>Author</p>
-        </div>
-        <div class="footer-column">
-            <h4>Year</h4>
-            <a href="2016.html">2016</a>
-            <a href="2017.html">2017</a>
-            <a href="2018.html">2018</a>
-            <a href="2019.html">2019</a>
-            <a href="2025.html">2025</a>
-        </div>
-
-        <div class="footer-column">
-            <h4>Role</h4>
-            <p>Athlete</p>
-            <p>Coach</p>
-            <p>Referee</p>
-        </div>
-
-        <div class="footer-column">
-            <h4>Location</h4>
-            <p>Waterloo</p>
-            <p>Toronto</p>
-            <p>Ottawa</p>
-        </div>
-
+    <div class="footer-board">
+     
+        <img src="footercopy.png" class="footer-img" alt="Footer">
+        <a href="index.html" class="footer-click footer-home"></a>
+        <a href="years.html" class="footer-click footer-year"></a>
+        <a href="Landyards.html" class="footer-click footer-lanyards"></a>
+        <a href="apparel.html" class="footer-click footer-apparel"></a>
+        <a href="merch.html" class="footer-click footer-merch"></a>
+        
     </div>
 </footer>
 

@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
    <style>
-    /* ================= FONTS & VARIABLES ================= */
 
 @font-face {
     font-family: "Sofia Pro Black";
@@ -33,17 +32,32 @@ body {
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-    background: #92be84; /* sage green */
+    background-image: url("grid.jpeg");
     color: var(--text);
 }
+.about-section {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 120px 20px;
+    width: 100%;
+    position: relative;
+}
 .about-description {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: regular;
     line-height: 1.6;
     color: #000000;
     margin-bottom: 20px;
 }
-/* HEADER (same as lanyards) */
+.about-box {
+    background: white;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
 .header {
     display: flex;
     align-items: center;
@@ -150,6 +164,12 @@ main {
     margin-bottom: 0.5rem;
     text-align: left;
 }
+.browse-title {
+    display: block;
+    max-width: 900px;   
+    width: 100%;
+    margin: 0 auto 0px auto;
+}
 
 .hero {
     display: flex;
@@ -189,7 +209,7 @@ main {
 }
 
 .hero-slider img.active {
-     display: block;
+    display: block;
 }
 .green-line {
     height: 5px;
@@ -264,6 +284,111 @@ main {
     gap: 1rem;
     }
 }
+.board{
+    position:relative;
+    max-width:4000px;
+    margin:auto;
+    
+}
+
+.board-img{
+    width:100%;
+    display:block;
+}
+
+.click {
+    position: absolute;
+    display: block;
+    cursor: pointer;
+   
+    
+}
+
+.home {
+    top: 15%;
+    left: 32%;
+    width: 10%;
+    height:10%;
+}
+
+.year {
+    top: 15%;
+    left: 46%;
+    width: 10%;
+    height: 10%;
+}
+
+.lanyards {
+    top: 15%;
+    left: 59%;
+    width: 10%;
+    height: 10%;
+}
+
+.apparel {
+    top: 60%;
+    left: 28%;
+    width: 10%;
+    height: 10%;
+}
+
+.merch {
+    bottom: 35%;
+    right: 26%;
+    width: 10%;
+    height: 10%;
+}
+.footer-board {
+    position: relative;
+    width: 100%;
+}
+
+.footer-img {
+    width: 100%;
+    display: block;
+}
+
+.footer-click {
+    position: absolute;
+    display: block;
+    cursor: pointer;
+}
+.footer-home {
+    left: 3%;
+    bottom: 5%;
+    width: 15%;
+    height: 35%;
+}
+
+.footer-year {
+    left: 23%;
+    bottom: 5%;
+    width: 15%;
+    height: 35%;
+}
+
+.footer-lanyards {
+    left: 45%;
+    bottom: 5%;
+    width: 15%;
+    height: 35%;
+}
+
+.footer-apparel {
+    left: 63%;
+    bottom: 5%;
+    width: 15%;
+    height: 35%;
+}
+
+.footer-merch {
+    left: 81%;
+    bottom: 5%;
+    width: 15%;
+    height: 35%;
+}
+
+
     </style>
 </head>
 <script>
@@ -302,13 +427,14 @@ document.addEventListener("DOMContentLoaded", function () {
             <ul class="dropdown-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
-                <li><a href="Author.html">Author</a></li>
+                <li><a href="index.html#author">Author</a></li>
             </ul>
         </li>
 
         <li class="dropdown">
             <button class="dropbtn">Year</button>
             <ul class="dropdown-menu">
+                <li><a href="years.html">Year Guide</a></li>
                 <li><a href="testing2016.html">2016</a></li>
                 <li><a href="2017.html">2017</a></li>
                 <li><a href="2018.html">2018</a></li>
@@ -318,29 +444,38 @@ document.addEventListener("DOMContentLoaded", function () {
         </li>
 
         <li class="dropdown">
-            <button class="dropbtn">Type</button>
+            <button class="dropbtn">Lanyards</button>
             <ul class="dropdown-menu">
-                <li><a href="Landyards.html">Lanyards</a></li>
-                <li><a href="Apparel.html">Apparel</a></li>
-                <li><a href="OVA_Swag.html">OVA Swag</a></li>
+                <li><a href="Landyards.html">Lanyards Guide</a></li>
+                <li><a href="LN2016.html">2016</a></li>
+                <li><a href="LN2017.html">2017</a></li>
+                <li><a href="LN2018.html">2018</a></li>
+                <li><a href="LN2019.html">2019</a></li>
+                <li><a href="LN2025.html">2025</a></li>
             </ul>
         </li>
 
         <li class="dropdown">
-            <button class="dropbtn">Role</button>
+            <button class="dropbtn">Apparel</button>
             <ul class="dropdown-menu">
-                <li><a href="#">Athlete</a></li>
-                <li><a href="#">Coach</a></li>
-                <li><a href="#">Referee</a></li>
+                <li><a href="apparel.html">Apparel Guide</a></li>
+                <li><a href="AP2016.html">2016</a></li>
+                <li><a href="AP2017.html">2017</a></li>
+                <li><a href="AP2018.html">2018</a></li>
+                <li><a href="AP2019.html">2019</a></li>
+                <li><a href="AP2025.html">2025</a></li>
             </ul>
         </li>
 
         <li class="dropdown">
-            <button class="dropbtn">Location</button>
+            <button class="dropbtn">Merch</button>
             <ul class="dropdown-menu">
-                <li><a href="#">Waterloo</a></li>
-                <li><a href="#">Toronto</a></li>
-                <li><a href="#">Ottawa</a></li>
+                <li><a href="Merch.html">Merch Guide</a></li>
+                <li><a href="MR2016.html">2016</a></li>
+                <li><a href="MR2017.html">2017</a></li>
+                <li><a href="MR2018.html">2018</a></li>
+                <li><a href="MR2019.html">2019</a></li>
+                <li><a href="MR2025.html">2025</a></li>
             </ul>
         </li>
 
@@ -374,7 +509,8 @@ document.addEventListener("DOMContentLoaded", function () {
 </section>
 
 <section id="about" class="about-section">
-
+    <div class="about-box">
+   
     <h2 class="about-title">About</h2>
     <p class="about-description">Proof of Attendance is my personal archive of lanyards, apparel, and event merchandise I have collected through participation in the Ontario Volleyball Association’s (OVA) Ontario Championships.</p>
     <p class="about-description">Each item is more than just an object, it is proof of attendance. Each item repersents different periods of time, games played, teams repersented, and environments experienced. What may seem like ordinary items, instead become markers of memory, effort, and progression.</p>
@@ -382,53 +518,49 @@ document.addEventListener("DOMContentLoaded", function () {
     <p class="about-description">Entries in this archive include lanyards, clothing, and other distributed items from Ontario Championships. The entries are split into categories, like year and item type, as I, along with the OVA, continue to grow.</p>
     <p class="about-description">This archive explores how small overlooked items can hold memories and function as proof of attendance. By collecting and organizing them, this archive preserves a 3-day end-of-year tournament into a lasting visual record.</p>
     <p class="about-description"> Users are invited to browse the collection and consider how attendance, memory, and identity can be embedded into niche objects. </p>
+    </div>
+    
+    <section id="about" class="about-section">
+    <div class="about-box">
+   
+    <h2 class="about-title">Author</h2>
+    <p class="about-description">The OVA Championships is an end of year 3-day tournament for each age group. Provincial's began at Rim Park in Waterloo, and since then has massivley expanded.
+    From every Provincials I have attended, I have kept almost all the memorbilia. From Lanyards, to sweaters, to keychains, I cherish it all. From moments good and bad, I documented it all. 
+    Each year I have played club volleyball has it's own story and lessons learnt. Now as a coach, I look at all these moments and memorbilia as growth, and has made me into the person and coach I am today.
+    </p>
+    </div>
+    
 </section>
+
+<section class="Bulletin">
+    
+     <img src="browse.png" class="browse-title">
+   
+     <div class="board">
+     <img src="browseboardcopy.png" alt="Bulletin Board" class="board-img">
+        <a href="index.html" class="click home"></a>
+        <a href="years.html" class="click year"></a>
+        <a href="Landyards.html" class="click lanyards"></a>
+        <a href="apparel.html" class="click apparel"></a>
+        <a href="merch.html" class="click merch"></a>
+
+    </div>
+</section>
+
+
 <footer class="site-footer">
-    <div class="footer-container">
-<link rel="stylesheet" href="style.css">
-        <div class="footer-brand">
-            <h2>Proof of Attendance</h2>
-        </div>
 
-        <div class="footer-column">
-            <h3>Home</h3>
-            <p>About</p>
-            <p>Question 1</p>
-            <p>Question 2</p>
-            <p>Question 3</p>
-        </div>
-
-        <div class="footer-column">
-            <h3>Year</h3>
-            <li><a href="2016.html">2016</a></li>
-            <li><a href="2017.html">2017</a></li>
-            <li><a href="2018.html">2018</a></li>
-            <li><a href="2019.html">2019</a></li>
-            <li><a href="2025.html">2025</a></li>
-        </div>
-
-        <div class="footer-column">
-            <h3>Type</h3>
-            <p>Apparel</p>
-            <p>Lanyards</p>
-        </div>
-
-        <div class="footer-column">
-            <h3>Role</h3>
-            <p>Athlete</p>
-            <p>Coach</p>
-            <p>Ref – soon</p>
-        </div>
-
-        <div class="footer-column">
-            <h3>Location</h3>
-            <p>Waterloo</p>
-            <p>Ottawa</p>
-            <p>Toronto</p>
-        </div>
-</p>
-        </div>
+    <footer class="footer-board">
+    <img src="footercopy.png" class="footer-img" alt="Footer">
+    
+    <a href="index.html" class="footer-click footer-home"></a>
+    <a href="years.html" class="footer-click footer-year"></a>
+    <a href="Landyards.html" class="footer-click footer-lanyards"></a>
+    <a href="apparel.html" class="footer-click footer-apparel"></a>
+    <a href="merch.html" class="footer-click footer-merch"></a>
+    
 </footer>
+
 <script>
 document.querySelectorAll(".dropbtn").forEach(button => {
   button.addEventListener("click", function(e) {
